@@ -1,0 +1,13 @@
+brace_style = "SameLineWhere"
+color = "Auto"
+comment_width = 79
+hard_tabs = true
+imports_indent = "Block"
+indent_style = "Block"
+max_width = 79
+newline_style = "Unix"
+reorder_imports = true
+reorder_modules = true
+tab_spaces = 4
+unstable_features = true
+wrap_comments = true

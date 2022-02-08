@@ -1,0 +1,40 @@
+{
+  "name": "wasm-base",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "wasm": "cd fib && wasm-pack build --target nodejs",
+    "dev": "ts-node-dev src/index.js",
+    "build": "npm run wasm && tsc",
+    "prod": "node build/index.js",
+    "clean": "rm -rf build/ ; cd fib && cargo clean"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schronck/wasm-base.git"
+  },
+  "author": "shronk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schronck/wasm-base/issues"
+  },
+  "homepage": "https://github.com/schronck/wasm-base#readme",
+  "devDependencies": {
+    "@types/node": "^15.3.1",
+    "eslint": "^7.26.0",
+    "ts-node": "^10.5.0",
+    "ts-node-dev": "^1.1.6",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  },
+  "lint-staged": {
+    "*.{js,ts}": "eslint --fix --cache --cache-location 'node_modules/.cache/.eslintcache'",
+    "*.{js,ts,md}": "pretty-quick --staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  }
+}
